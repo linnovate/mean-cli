@@ -1,8 +1,8 @@
-var dependable = require('dependable');
 var swig = require('swig');
-var container = dependable.container();
+var container = require('dependable').container();
 var fs = require('fs');
 var EventEmitter = require('events').EventEmitter;
+
 var events = new EventEmitter();
 var modules = [];
 var allMenus = [];
@@ -18,7 +18,7 @@ var aggregated = {
 function Meanio() {
 	if (this.active) return;
 	this.events = events;
-};
+}
 
 Meanio.prototype.app = function(name, options) {
 	if (this.active) return this;
@@ -29,10 +29,10 @@ Meanio.prototype.app = function(name, options) {
 	this.name = name;
 	this.active = true;
 	this.options = options;
-	menus = new this.Menus;
+	menus = new this.Menus();
 	this.menus = menus;
 	return this;
-}
+};
 
 Meanio.prototype.status = function() {
 	return {
@@ -83,7 +83,7 @@ Meanio.prototype.Menus = function(name) {
 		if (!allMenus[options.menu] && !options.defaultMenu) return [];
 
 		var items = options.defaultMenu.concat((allMenus[options.menu]?allMenus[options.menu]:[]));
-		
+
 		items.forEach(function(item) {
 
 			var hasRole = false;
@@ -97,34 +97,33 @@ Meanio.prototype.Menus = function(name) {
 				allowed.push(item);
 			}
 		});
-		return allowed
-	}
-}
+		return allowed;
+	};
+};
 
 Meanio.prototype.Module = function(name) {
 	this.name = name;
 	this.menus = menus;
 	this.render = function(view, options, callback) {
 		swig.renderFile(modulePath(this.name) + '/server/views/' + view + '.html', options, callback);
-	},
+	};
 
 	this.routes = function() {
 		var args = Array.prototype.slice.call(arguments);
 		require(modulePath(this.name) + '/server/routes').apply(this, [this].concat(args));
-	},
+	};
 
 	this.aggregateJs = function(path) {
 		aggregate('js', this.name + '/public/' + path);
 	};
 	this.aggregateCss = function(path) {
 		aggregate('css', this.name + '/public/assets/css/' + path);
-	}
+	};
 
 	this.register = function(callback) {
 		container.register(name, callback);
-	}
-
-}
+	};
+};
 
 function modulePath(name) {
 	return process.cwd() + '/node_modules/' + name;
@@ -154,8 +153,7 @@ function findModules() {
 				});
 			});
 		}
-	})
-
+	});
 }
 
 function enableModules() {
@@ -173,10 +171,9 @@ function enableModules() {
 
 		return modules;
 	});
-
 }
 
-//will do compressiona nd mingify/uglify soon
+//will do compressiona and mingify/uglify soon
 function aggregate(ext, path) {
 	//Allow libs
 	var libs = true;
@@ -186,7 +183,7 @@ function aggregate(ext, path) {
 	aggregated[ext] = '';
 
 	//Deny Libs
-	var libs = false;
+	libs = false;
 	events.on('modulesFound', function() {
 		modules.forEach(function(module, index) {
 			readFiles(ext, process.cwd() + '/node_modules/' + module.name + '/public/');
@@ -201,7 +198,7 @@ function aggregate(ext, path) {
 						if (!libs && file != 'libs') {
 							readFile(ext, path + file);
 						}
-					})
+					});
 				});
 			}
 		});
@@ -221,10 +218,8 @@ function aggregate(ext, path) {
 					aggregated[ext] += (ext == 'js') ? ('(function(){' + data.toString() + '})();') : data.toString() + '\n';
 				}
 			});
-		})
-
+		});
 	}
-
 }
 
 Meanio.prototype.chainware = {
@@ -268,7 +263,6 @@ Meanio.prototype.chainware = {
 
 		middleware[operator][index].func.apply(this, args);
 	}
+};
 
-}
-
-var mean = module.exports = exports = new Meanio;
+var mean = module.exports = exports = new Meanio();
