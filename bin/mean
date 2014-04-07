@@ -189,6 +189,7 @@ function options() {
     git: program.git,
     force: program.force,
     verbose: program.verbose,
+    repo: program.repo,
     branch: program.branch,
     author: program.author,
     env: program.env || 'development'
@@ -326,7 +327,8 @@ function cloneRepo(name, options) {
   progress.start();
 
   var spawn = require('child_process').spawn;
-  var source = (options.git ? 'git@github.com:linnovate/mean.git' : 'https://github.com/linnovate/mean.git');
+  var repo = options.repo || 'linnovate/mean.git';
+  var source = (options.git ? 'git@github.com:' : 'https://github.com/') + repo;
   var git = spawn('git', ['clone', '-b', options.branch, source, name]);
   var message = 'Cloning branch: ' + options.branch + ' into destination folder: ' + name;
   console.log(message.info);
