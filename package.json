@@ -45,7 +45,6 @@
     "express-validator": "^2.1.1",
     "forever": "^0.11.0",
     "lodash": "^2.4.1",
-    "mean-logger": "0.0.1",
     "mongodb": "^1.4.0",
     "mongoose": "^3.8.8",
     "npm": "^1.4.7",
