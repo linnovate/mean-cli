@@ -16,6 +16,7 @@ program
   .command('uninstall <module>', 'Uninstalls a MEAN module')
   .command('docs', 'Opens MEAN documentation in your local browser')
   .command('package <name> [options]', 'package')
+  .command('pattern <name> [options]', 'pattern')
   .command('list', 'List all installed packages')
   .command('status', 'Overall system status')
   .command('user <email> [options]', 'Manage users')

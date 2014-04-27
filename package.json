@@ -1,12 +1,12 @@
 {
   "name": "meanio",
-  "version": "0.4.8",
+  "version": "0.5.0",
   "preferGlobal": true,
   "description": "Simple command line interface for installing and managing MEAN apps",
   "author": {
     "name": "linnovate"
   },
-  "license": "ISC",
+  "license": "MIT",
   "main": "index",
   "bin": {
     "mean": "./bin/mean",
@@ -15,6 +15,7 @@
     "mean-uninstall": "./bin/mean-uninstall",
     "mean-docs": "./bin/mean-docs",
     "mean-package": "./bin/mean-package",
+    "mean-pattern": "./bin/mean-pattern",
     "mean-list": "./bin/mean-list",
     "mean-status": "./bin/mean-status",
     "mean-user": "./bin/mean-user"
@@ -45,19 +46,19 @@
     "forever": "^0.11.0",
     "lodash": "^2.4.1",
     "mean-logger": "0.0.1",
-    "mkdirp": "^0.3.5",
     "mongodb": "^1.4.0",
     "mongoose": "^3.8.8",
+    "npm": "^1.4.7",
     "opener": "^1.3.0",
+    "shelljs": "^0.2.6",
     "swig": "^1.3.2",
-    "view-helpers": "^0.1.4",
-    "which": "^1.0.5"
+    "view-helpers": "^0.1.4"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-mocha-test": "^0.10.0",
     "mocha": "^1.18.2",
-    "should": "^3.2.0"
+    "should": "^3.3.1"
   }
 }

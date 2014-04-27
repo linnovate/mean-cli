@@ -19,4 +19,4 @@ module.exports = function(database) {
 	});
 
 	database.connection.model('Package', PackageSchema);
-}
+};
