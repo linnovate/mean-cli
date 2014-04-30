@@ -13,7 +13,7 @@ program.version(version, '-v, --version');
 program
   .command('init <name> [options]', 'Create a MEAN application in the current working directory')
   .command('install <module> [options]', 'Installs a MEAN module')
-  .command('uninstall <module>', 'Uninstalls a MEAN module')
+  .command('uninstall <module>', 'Uninstalls a MEAN package or module')
   .command('docs', 'Opens MEAN documentation in your local browser')
   .command('package <name> [options]', 'package')
   .command('list', 'List all installed packages')
