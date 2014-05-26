@@ -17,7 +17,8 @@
     "mean-package": "./bin/mean-package",
     "mean-list": "./bin/mean-list",
     "mean-status": "./bin/mean-status",
-    "mean-user": "./bin/mean-user"
+    "mean-user": "./bin/mean-user",
+    "mean-login": "./bin/mean-login"
   },
   "repository": {
     "type": "git",
