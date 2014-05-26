@@ -18,8 +18,9 @@ if (!program.args.length) {
   console.error('error: email required');
   process.exit(1);
 }
+if (options)
+	console.log(program);
 
-console.log(program.args);
 var email = program.args[0];
 var password = program.args[1];
 if (program.email && program.password) {
