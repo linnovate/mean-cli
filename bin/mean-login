@@ -14,15 +14,14 @@ var options = {
   password: program.password
 };
 
-if (!program.args.length) {
-  console.error('error: email required');
-  process.exit(1);
-}
-if (options)
-	console.log(program);
+// if (!program.args.length) {
+//   console.log(program);
+//   console.error('error: email required');
+//   process.exit(1);
+// }
 
-var email = program.args[0];
-var password = program.args[1];
+var email = program.email;
+var password = program.password;
 if (program.email && program.password) {
 	cli.login(email, password);
 }
