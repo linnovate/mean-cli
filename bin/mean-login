@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 'use strict';
 
 var cli = require('../lib/cli'),
@@ -7,6 +5,23 @@ var cli = require('../lib/cli'),
 
 program
   .description('Login to mean.io')
+  .option('-u, --email <email>', 'Email')
+  .option('-p, --password <password>', 'Password')
   .parse(process.argv);
 
-cli.login();
+var options = {
+  email: program.email,
+  password: program.password
+};
+
+if (!program.args.length) {
+  console.error('error: email required');
+  process.exit(1);
+}
+
+console.log(program.args);
+var email = program.args[0];
+var password = program.args[1];
+if (program.email && program.password) {
+	cli.login(email, password);
+}
