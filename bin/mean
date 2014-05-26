@@ -19,6 +19,7 @@ program
   .command('list', 'List all installed packages')
   .command('status', 'Overall system status')
   .command('user <email> [options]', 'Manage users')
+  .command('login', 'Login to mean.io')
   .parse(process.argv);
 
 // print help with no args
