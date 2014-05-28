@@ -19,6 +19,7 @@ program
     .command('list', 'List all installed packages')
     .command('status', 'Overall system status')
     .command('user <email> [options]', 'Manage users')
+    .command('setPort <port>', 'Change the port of your app')
     .parse(process.argv);
 
 // print help with no args
