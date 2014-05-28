@@ -3,25 +3,50 @@
 var cli = require('../lib/cli'),
   program = require('commander');
 
-program
-  .description('Login to mean.io')
-  .option('-u, --email <email>', 'Email')
-  .option('-p, --password <password>', 'Password')
-  .parse(process.argv);
+// program
+//   .description('Login to mean.io')
+//   .option('-u, --email <email>', 'Email')
+//   .option('-p, --password <password>', 'Password')
+//   .parse(process.argv);
 
-var options = {
-  email: program.email,
-  password: program.password
-};
+// var options = {
+//   email: program.email,
+//   password: program.password
+// };
 
-// if (!program.args.length) {
-//   console.log(program);
-//   console.error('error: email required');
-//   process.exit(1);
+// // if (!program.args.length) {
+// //   console.log(program);
+// //   console.error('error: email required');
+// //   process.exit(1);
+// // }
+
+// var email = program.email;
+// var password = program.password;
+// if (program.email && program.password) {
+// 	cli.login(email, password);
 // }
 
-var email = program.email;
-var password = program.password;
-if (program.email && program.password) {
-	cli.login(email, password);
-}
+
+var prompt = require('prompt');
+    var schema = {
+        properties: {
+            name: {
+                pattern: /^[a-zA-Z\s\-]+$/,
+                message: 'Name must be only letters, spaces, or dashes',
+                required: true
+            },
+            password: {
+                hidden: true
+            }
+        }
+    };
+    prompt.start();
+    prompt.get(schema, function(err, result) {
+        //
+        // Log the results.
+        //
+        console.log('Command-line input received:');
+        console.log('  name: ' + result.name);
+        console.log('  password: ' + result.password);
+        cli.login(result.name, result.password);
+    });
