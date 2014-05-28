@@ -7,10 +7,10 @@ var cli = require('../lib/cli'),
 
 program
   .description('Create a repository for MEAN package')
-  // .option('-b, --branch <branch>', 'git branch')
-  // .option('-g, --git', 'clone using git:// instead of https://')
-  // .option('--repo <repo>', 'Specify repository to install')
-  // .option('-q, --quick', 'Automatically go into the directory, run npm install and grunt')
+  .option('-b, --branch <branch>', 'git branch')
+  .option('-g, --git', 'clone using git:// instead of https://')
+  .option('--repo <repo>', 'Specify repository to install')
+  .option('-q, --quick', 'Automatically go into the directory, run npm install and grunt')
   .parse(process.argv);
 
 // var options = {
