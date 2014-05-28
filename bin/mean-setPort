@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var cli = require('../lib/cli'),
+    program = require('commander');
+
+program
+    .description('Change the port of your app, without arg port will be set to 3000')
+    .parse(process.argv);
+
+cli.setPort(program.args.length ? program.args[0] : '3000');
