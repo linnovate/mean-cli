@@ -4,8 +4,6 @@
 
 var cli = require('../lib/cli'),
   program = require('commander');
-  
-  console.log('create');
 
 program
   .description('Create a repository for MEAN package')
