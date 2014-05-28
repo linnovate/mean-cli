@@ -42,11 +42,5 @@ var prompt = require('prompt');
     };
     prompt.start();
     prompt.get(schema, function(err, result) {
-        //
-        // Log the results.
-        //
-        console.log('Command-line input received:');
-        console.log('  name: ' + result.name);
-        console.log('  password: ' + result.password);
         cli.login(result.name, result.password);
     });
