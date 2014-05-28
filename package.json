@@ -1,66 +1,67 @@
 {
-  "name": "meanio",
-  "version": "0.4.20",
-  "preferGlobal": true,
-  "description": "Simple command line interface for installing and managing MEAN apps",
-  "author": {
-    "name": "linnovate"
-  },
-  "license": "MIT",
-  "main": "index",
-  "bin": {
-    "mean": "./bin/mean",
-    "mean-init": "./bin/mean-init",
-    "mean-install": "./bin/mean-install",
-    "mean-uninstall": "./bin/mean-uninstall",
-    "mean-docs": "./bin/mean-docs",
-    "mean-package": "./bin/mean-package",
-    "mean-list": "./bin/mean-list",
-    "mean-status": "./bin/mean-status",
-    "mean-user": "./bin/mean-user",
-    "mean-login": "./bin/mean-login"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/linnovate/mean-cli.git"
-  },
-  "keywords": [
-    "mean",
-    "meanio",
-    "mean.io"
-  ],
-  "engines": {
-    "node": "0.10.x",
-    "npm": "1.4.x"
-  },
-  "dependencies": {
-    "chalk": "^0.4.0",
-    "commander": "^2.2.0",
-    "lodash": "^2.4.1",
-    "mongodb": "^1.4.0",
-    "npm": "^1.4.7",
-    "opener": "^1.3.0",
-    "shelljs": "^0.2.6",
-    "swig": "^1.3.2",
-    "request" : "latest"
-  },
-  "devDependencies": {
-    "grunt": "^0.4.4",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-mocha-test": "^0.10.0",
-    "mocha": "^1.18.2",
-    "should": "^3.2.0"
-  },
-  "readme": "# [![MEAN Logo](http://www.mean.io/img/logos/meanlogo.png)](http://mean.io/) MEAN Command Line\n\n[![NPM version](https://badge.fury.io/js/meanio.svg)](http://badge.fury.io/js/meanio)\n[![Dependency Status](https://david-dm.org/linnovate/mean-cli.svg)](https://david-dm.org/linnovate/mean-cli)\n\nSource for npm package meanio. mean-cli is a core package of the mean.io project and is used primarily to manage packages for extending functionality, for example adding a package to enable inline editable tokens. \n\nThe cli provides a lot of useful functionality, such as scaffolding options to ceate new packages, assign roles to users, check the mongo status, add/remove packages and list currently installed packages.\n\nSee http://mean.io/#!/docs for more in-depth information about mean.\n\n## The repository contains\n* The bin file used for cli operations.\n* Core functionality for managing mean packages.\n\n## Basic Usage\n\n  Install Package:\n\n    $ sudo npm install -g meanio\n\n  Explore CLI functionality:\n\n    $ mean --help\n\n  Create a new mean app:\n\n    $ mean init <NameOfYourApp>\n\n  Install Dependencies:\n\n    $ cd <NameOfYourApp> && npm install\n\n  Create a sample mean package:\n\n    $ mean package <NameOfYourPackage>\n\n  Run your app:\n\n    $ grunt\n",
-  "readmeFilename": "README.md",
-  "bugs": {
-    "url": "https://github.com/linnovate/mean-cli/issues"
-  },
-  "homepage": "https://github.com/linnovate/mean-cli",
-  "_id": "meanio@0.4.20",
-  "dist": {
-    "shasum": "178e0c541c1984c5918d3cd715990ce8e9a2d882"
-  },
-  "_from": "meanio@0.4.x",
-  "_resolved": "https://registry.npmjs.org/meanio/-/meanio-0.4.20.tgz"
+    "name": "meanio",
+    "version": "0.4.20",
+    "preferGlobal": true,
+    "description": "Simple command line interface for installing and managing MEAN apps",
+    "author": {
+        "name": "linnovate"
+    },
+    "license": "MIT",
+    "main": "index",
+    "bin": {
+        "mean": "./bin/mean",
+        "mean-init": "./bin/mean-init",
+        "mean-install": "./bin/mean-install",
+        "mean-uninstall": "./bin/mean-uninstall",
+        "mean-docs": "./bin/mean-docs",
+        "mean-package": "./bin/mean-package",
+        "mean-list": "./bin/mean-list",
+        "mean-status": "./bin/mean-status",
+        "mean-user": "./bin/mean-user",
+        "mean-login": "./bin/mean-login"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/linnovate/mean-cli.git"
+    },
+    "keywords": [
+        "mean",
+        "meanio",
+        "mean.io"
+    ],
+    "engines": {
+        "node": "0.10.x",
+        "npm": "1.4.x"
+    },
+    "dependencies": {
+        "chalk": "^0.4.0",
+        "commander": "^2.2.0",
+        "lodash": "^2.4.1",
+        "mongodb": "^1.4.0",
+        "npm": "^1.4.7",
+        "opener": "^1.3.0",
+        "shelljs": "^0.2.6",
+        "swig": "^1.3.2",
+        "request": "latest",
+        "prompt": "latest"
+    },
+    "devDependencies": {
+        "grunt": "^0.4.4",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-mocha-test": "^0.10.0",
+        "mocha": "^1.18.2",
+        "should": "^3.2.0"
+    },
+    "readme": "# [![MEAN Logo](http://www.mean.io/img/logos/meanlogo.png)](http://mean.io/) MEAN Command Line\n\n[![NPM version](https://badge.fury.io/js/meanio.svg)](http://badge.fury.io/js/meanio)\n[![Dependency Status](https://david-dm.org/linnovate/mean-cli.svg)](https://david-dm.org/linnovate/mean-cli)\n\nSource for npm package meanio. mean-cli is a core package of the mean.io project and is used primarily to manage packages for extending functionality, for example adding a package to enable inline editable tokens. \n\nThe cli provides a lot of useful functionality, such as scaffolding options to ceate new packages, assign roles to users, check the mongo status, add/remove packages and list currently installed packages.\n\nSee http://mean.io/#!/docs for more in-depth information about mean.\n\n## The repository contains\n* The bin file used for cli operations.\n* Core functionality for managing mean packages.\n\n## Basic Usage\n\n  Install Package:\n\n    $ sudo npm install -g meanio\n\n  Explore CLI functionality:\n\n    $ mean --help\n\n  Create a new mean app:\n\n    $ mean init <NameOfYourApp>\n\n  Install Dependencies:\n\n    $ cd <NameOfYourApp> && npm install\n\n  Create a sample mean package:\n\n    $ mean package <NameOfYourPackage>\n\n  Run your app:\n\n    $ grunt\n",
+    "readmeFilename": "README.md",
+    "bugs": {
+        "url": "https://github.com/linnovate/mean-cli/issues"
+    },
+    "homepage": "https://github.com/linnovate/mean-cli",
+    "_id": "meanio@0.4.20",
+    "dist": {
+        "shasum": "178e0c541c1984c5918d3cd715990ce8e9a2d882"
+    },
+    "_from": "meanio@0.4.x",
+    "_resolved": "https://registry.npmjs.org/meanio/-/meanio-0.4.20.tgz"
 }
