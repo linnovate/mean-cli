@@ -19,7 +19,7 @@
         "mean-status": "./bin/mean-status",
         "mean-user": "./bin/mean-user",
         "mean-login": "./bin/mean-login",
-        "mean-create" : "./bin/mean-create"
+        "mean-create": "./bin/mean-create"
     },
     "repository": {
         "type": "git",
