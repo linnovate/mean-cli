@@ -20,7 +20,7 @@
         "mean-user": "./bin/mean-user",
         "mean-login": "./bin/mean-login",
         "mean-create": "./bin/mean-create",
-        "mean-package-create": "./bin/mean-package-create"
+        "mean-create-package": "./bin/mean-create-package"
     },
     "repository": {
         "type": "git",
