@@ -19,7 +19,8 @@
         "mean-status": "./bin/mean-status",
         "mean-user": "./bin/mean-user",
         "mean-login": "./bin/mean-login",
-        "mean-create": "./bin/mean-create"
+        "mean-create": "./bin/mean-create",
+        "mean-package-create": "./bin/mean-package-create"
     },
     "repository": {
         "type": "git",
@@ -46,7 +47,7 @@
         "request": "latest",
         "prompt": "latest",
         "mongoose": "latest",
-        "easy-zip" : "latest"
+        "easy-zip": "latest"
     },
     "devDependencies": {
         "grunt": "^0.4.4",
