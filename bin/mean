@@ -20,8 +20,6 @@ program
   .command('status', 'Overall system status')
   .command('user <email> [options]', 'Manage users')
   .command('login', 'Login to mean.io')
-  // .command('create', 'Create MEAN package Repo')
-  .command('create <name>', 'Create MEAN package Repo')
   .parse(process.argv);
 
 // print help with no args
