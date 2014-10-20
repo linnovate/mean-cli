@@ -1,6 +1,6 @@
 {
   "name": "mean-cli",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "preferGlobal": true,
   "description": "Simple command line interface for installing and managing MEAN apps",
   "author": {
@@ -27,7 +27,7 @@
   "license": "AGPL",
   "main": "index",
   "scripts": {
-    "preinstall": "./scripts/preinstall"
+    "preinstall": "node ./scripts/preinstall"
   },
   "bin": {
     "mean": "./bin/mean",
