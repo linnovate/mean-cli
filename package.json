@@ -1,6 +1,6 @@
 {
   "name": "mean-cli",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "preferGlobal": true,
   "description": "Simple command line interface for installing and managing MEAN apps",
   "author": {
@@ -66,13 +66,13 @@
   "dependencies": {
     "bower": "^1.3.8",
     "chalk": "^0.5.1",
-    "commander": "2.2.0",
+    "commander": "^2.4.0",
     "lodash": "^2.4.1",
     "mean-health": "~0.1.3",
     "mongoose": "^3.8.12",
-    "npm": "^1.4.7",
+    "npm": "^2.1.0",
     "opener": "^1.3.0",
-    "prompt": "0.2.13",
+    "prompt": "^0.2.13",
     "request": "latest",
     "shelljs": "^0.3.0"
   },
