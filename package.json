@@ -26,6 +26,9 @@
   ],
   "license": "AGPL",
   "main": "index",
+  "scripts": {
+    "preinstall": "./scripts/preinstall"
+  },
   "bin": {
     "mean": "./bin/mean",
     "mean-init": "./bin/mean-init",
