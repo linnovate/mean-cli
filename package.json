@@ -24,7 +24,7 @@
       "mail": "ehud@linnovate.net"
     }
   ],
-  "license": "AGPL",
+  "license": "MIT",
   "main": "index",
   "scripts": {
     "preinstall": "node ./scripts/preinstall"
