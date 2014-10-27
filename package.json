@@ -1,29 +1,10 @@
 {
   "name": "mean-cli",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "preferGlobal": true,
   "description": "Simple command line interface for installing and managing MEAN apps",
-  "author": {
-    "name": "linnovate"
-  },
-  "contributors": [
-    {
-      "name": "Lior Kesos",
-      "mail": "lior@linnovate.net"
-    },
-    {
-      "name": "Yonatan Ellman",
-      "mail": "yonatan@linnovate.net"
-    },
-    {
-      "name": "Drew Fyock",
-      "mail": "drew@steelbisondev.com"
-    },
-    {
-      "name": "Ehud Shahak",
-      "mail": "ehud@linnovate.net"
-    }
-  ],
+  "author":"mean cli team", 
+  "contributors": "https://github.com/linnovate/mean-cli/graphs/contributors",
   "license": "MIT",
   "main": "index",
   "scripts": {
