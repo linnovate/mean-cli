@@ -28,7 +28,7 @@ if (~args.indexOf('meanio') && ~args.indexOf('--global')) {
       data = JSON.parse(data);
     } catch (e) {}
 
-    if (data && data.dependencies.meanio) {
+    if (data && data.dependencies && data.dependencies.meanio) {
       console.log('  Please run \'npm uninstall -g meanio\' prior to installing mean-cli');
       console.log('');
       process.exit(1);
