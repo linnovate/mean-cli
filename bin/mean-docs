@@ -8,4 +8,4 @@ program
   .description('Opens MEAN documentation in your local browser')
   .parse(process.argv);
 
-require('opener')('http://www.mean.io/#!/docs');
+require('opener')('http://learn.mean.io');
