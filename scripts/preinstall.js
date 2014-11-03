@@ -15,7 +15,7 @@ if (~args.indexOf('meanio') && ~args.indexOf('--global')) {
   process.exit(1);
 } else if (~args.indexOf('mean-cli')) {
   var spawn = require('child_process').spawn,
-  	npm = (process.platform === "win32" ? "npm.cmd" : "npm"),
+    npm = process.platform === 'win32' ? 'npm.cmd' : 'npm',
     npmls = spawn(npm, ['ls', '--global', '--json', '--depth', '0']);
 
   var data = {};
