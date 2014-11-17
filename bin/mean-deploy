@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var cli = require('../lib/cli'),
+  program = require('commander');
+
+program
+  .description('Deploys an app on the mean network.')
+  .parse(process.argv);
+
+cli.deploy();
