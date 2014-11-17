@@ -10,6 +10,7 @@ program
   .option('-a, --addRole <role>', 'Assign role to user')
   .option('-r, --removeRole <role>', 'Remove role from user')
   .option('--env [env]', 'Mean environment defaults to `development`')
+  .option('-r, --remote', 'Perform the command on remote mean instance')
   .parse(process.argv);
 
 var options = {
@@ -24,6 +25,13 @@ if (!program.args.length) {
 }
 
 var email = program.args[0];
+
+if (program.remote) {
+  var command = program._name + ' ' + program.rawArgs.slice(2).join(' ').replace('--remote', '');
+  cli.remoteCommand(command);
+  return;
+}
+
 if (program.addRole || program.removeRole) {
   if (program.addRole) cli.updateRole(email, options, 'a');
   if (program.removeRole) cli.updateRole(email, options, 'r');

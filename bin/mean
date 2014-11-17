@@ -9,7 +9,6 @@ var program = require('commander'),
 // set program version
 var version = require('../package').version;
 program.version(version, '-v, --version');
-
 program
   .command('init <name> [options]', 'Create a MEAN application in the current working directory')
   .command('postinstall', 'Run bower and npm install for packages')
