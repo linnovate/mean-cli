@@ -11,4 +11,5 @@ branches:
     - master
     
 script:
-  - grunt test
+  - chmod u+x start.sh
+  - ./start.sh
