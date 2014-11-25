@@ -1,0 +1,14 @@
+language: node_js
+cache:
+  - apt
+  - npm
+
+matrix:
+  fast_finish: true
+  
+branches:
+  only:
+    - develop
+    
+script:
+  - grunt test
