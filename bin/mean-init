@@ -3,6 +3,7 @@
 'use strict';
 
 var cli = require('../lib/cli'),
+  wizard = require('../lib/wizard'),
   program = require('commander');
 
 program
@@ -14,10 +15,11 @@ program
   .parse(process.argv);
 
 var options = {
+  name: program.args.length ? program.args[0] : 'mean',
   branch: program.branch || 'master',
   git: program.git,
   repo: program.repo,
   quick: program.quick
 };
 
-cli.init(program.args.length ? program.args[0] : 'mean', options);
+wizard(options, cli.init);
