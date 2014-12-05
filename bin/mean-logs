@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var cli = require('../lib/cli'),
+  program = require('commander');
+
+program
+  .description('Pulls logs from deployed app on cloud.mean.io')
+  .parse(process.argv);
+
+cli.logs();

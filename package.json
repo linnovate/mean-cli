@@ -22,6 +22,7 @@
     "mean-publish": "./bin/mean-publish",
     "mean-search": "./bin/mean-search",
     "mean-deploy": "./bin/mean-deploy",
+    "mean-logs": "./bin/mean-logs",    
     "mean-register": "./bin/mean-register",
     "mean-postinstall": "./bin/mean-postinstall",
     "mean-preinstall": "./bin/mean-preinstall",
