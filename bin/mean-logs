@@ -7,6 +7,7 @@ var cli = require('../lib/cli'),
 
 program
   .description('Pulls logs from deployed app on cloud.mean.io')
+  .option('-n <lines>', 'Specify number of lines 20-200')
   .parse(process.argv);
 
-cli.logs();
+cli.logs(program.lines);
