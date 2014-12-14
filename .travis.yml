@@ -1,0 +1,15 @@
+language: node_js
+cache:
+  - apt
+  - npm
+
+matrix:
+  fast_finish: true
+  
+#branches:
+#  only:
+#    - master
+    
+script:
+  - chmod u+x start.sh
+  - ./start.sh
