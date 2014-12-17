@@ -22,7 +22,7 @@
     "mean-publish": "./bin/mean-publish",
     "mean-search": "./bin/mean-search",
     "mean-deploy": "./bin/mean-deploy",
-    "mean-logs": "./bin/mean-logs",    
+    "mean-logs": "./bin/mean-logs",
     "mean-register": "./bin/mean-register",
     "mean-postinstall": "./bin/mean-postinstall",
     "mean-preinstall": "./bin/mean-preinstall",
@@ -58,6 +58,7 @@
     "mongoose": "^3.8.12",
     "npm": "^2.1.0",
     "opener": "^1.3.0",
+    "progress": "^1.1.8",
     "prompt": "^0.2.13",
     "request": "latest",
     "shelljs": "^0.3.0"
