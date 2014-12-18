@@ -8,9 +8,6 @@ matrix:
 
 service: 
   - mongodb
-#branches:
-#  only:
-#    - master
     
 script:
   - chmod u+x start.sh
