@@ -1,14 +1,14 @@
 language: node_js
+env:
+  - TASKER=grunt
+  - TASKER=gulp
 cache:
   - apt
   - npm
-
 matrix:
-  fast_finish: true
-
+  fast_finish:true 
 service: 
   - mongodb
-    
 script:
   - chmod u+x start.sh
   - ./start.sh
