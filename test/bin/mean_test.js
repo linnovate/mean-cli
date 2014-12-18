@@ -3,6 +3,8 @@
 var path = require('path'),
   exec = require('child_process').exec;
 
+require('should');
+
 var CMD = path.join(process.cwd(), 'bin', 'mean');
 
 describe('mean', function() {
