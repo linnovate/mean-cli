@@ -1,14 +1,24 @@
 language: node_js
-env:
-  - TASKER=grunt
-  - TASKER=gulp
+
 cache:
   - apt
   - npm
+  
 matrix:
-  fast_finish:true 
-service: 
-  - mongodb
-script:
+  fast_finish: true
+  
+env:
+  - TASKER=grunt
+  - TASKER=gulp
+  
+services: mongodb
+
+before_install:
   - chmod u+x start.sh
-  - ./start.sh
+  - ./start test_self
+
+script:
+  - ./start.sh test_mean_init #make use of var:tasker
+
+after_success:
+  - ./start.sh test_navigation
