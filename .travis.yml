@@ -5,7 +5,9 @@ cache:
 
 matrix:
   fast_finish: true
-  
+
+service: 
+  - mongodb
 #branches:
 #  only:
 #    - master
