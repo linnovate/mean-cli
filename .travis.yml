@@ -9,7 +9,7 @@ matrix:
   
 env:
   - TASKER=grunt
-  - TASKER=gulp
+#  - TASKER=gulp
   
 services: mongodb
 
