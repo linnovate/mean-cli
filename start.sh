@@ -40,12 +40,11 @@ test_mean_init
 capture1(){
 chmod +x ./capture.sh
 bash -c ./capture.sh
-cp /tmp/session* $CIRCLE_ARTIFACTS/
 }
 
 steps(){
 set_env
-test "$LOGNAME" != travis  && capture1
+capture1
 #tests
 }
 
