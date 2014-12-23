@@ -11,7 +11,12 @@ export dir_artifacts=${CIRCLE_ARTIFACTS:-$HOME/tmp}
 ensure1(){
 test -d $dir_product || { mkdir -p $dir_product; }
 }
-
+apt0(){
+sudo apt-get install -y -q <<START
+xcowsay  libnotify-bin imagemagick
+xvfb x11-utils x11-apps dbus-x11  
+START
+}
 apt1(){  
 #firefox
 commander sudo apt-get -y update
@@ -55,7 +60,7 @@ commander whereis xcowsay
 steps(){
   set_env1
   ensure1
-  apt1
+  apt0
   ensure_apt
   
   debug_screen
