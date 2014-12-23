@@ -1,35 +1,11 @@
 #!/usr/bin/env bash
 set -u
 
-
-
-######################### config.cfg
-commander () 
-{ 
-    local args=($@);
-    local cmd="${args[@]}";
-    echo "[CMD] $cmd"; 
- 	eval "$cmd" 1>/tmp/out 2>/tmp/err || { trace ERR; cat 1>&2 /tmp/err; exit 1; }
-}
-
-trace(){
-	echo 1>&2 $@
-}
-
-trap_err (){
-	trace $FUNCNAME
-}
-
-export -f trap_err
-export -f commander
-export -f trace
-trap trap_err ERR
-#########################
-
 set_env(){
-true
+export file_cfg=test/SH/config.cfg
+export file_capture=test/SH/capture.sh
+source $file_cfg
 }
-
 
 test_self(){
 sudo apt-get install -y -q curl
@@ -56,6 +32,7 @@ echo -e '\n' |  mean init myApp
 cd myApp
 user_instructions
 test_navigation
+cd -
 }
 
 tests(){
@@ -63,16 +40,15 @@ test_self
 test_mean_init
 }
 
-capture1(){
-chmod +x ./capture.sh
- #trap_err on subshell
-( bash -c ./capture.sh )
+navigation(){
+chmod +x $file_capture
+( bash -c $file_capture )
 }
 
 steps(){
 set_env
 tests
-capture1
+navigation
 }
 
 steps
