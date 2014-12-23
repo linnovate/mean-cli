@@ -1,6 +1,26 @@
 #!/bin/bash
 set -u
 
+
+
+
+commander () 
+{ 
+    local args=($@);
+    local cmd="${args[@]}";
+    echo "[CMD] $cmd";
+    eval "$cmd"
+}
+export -f commander
+
+trace(){
+	echo 1>&2 $@
+}
+
+export -f commander
+export -f trace
+
+
 set_env(){
 export PATH="$PATH:/usr/games/"
 }
@@ -39,12 +59,12 @@ test_mean_init
 }
 capture1(){
 chmod +x ./capture.sh
-bash -c ./capture.sh
+bash -E ./capture.sh #trap_err on subshell
 }
 
 steps(){
 set_env
-capture1
+( set -e; capture1 )
 #tests
 }
 
