@@ -14,8 +14,8 @@ test -d $dir_product || { mkdir -p $dir_product; }
 
 apt1(){  
 #firefox
-
-sudo apt-get install -y -q <<START
+sudo apt-get update -qq -y
+sudo apt-get install -y <<START
 imagemagick
 xvfb
 x11-utils
