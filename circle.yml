@@ -9,10 +9,12 @@ test:
   #before
   - chmod +x ./start.sh
   - chmod +x ./capture.sh
-  #run
-  - ./start.sh test_self
-  - ./start.sh test_mean_init
-  - ./start.sh test_navigation
-  #last
+  #x11
   - bash -c ./capture.sh
   - cp /tmp/session.png $CIRCLE_ARTIFACTS
+  - firefox
+  - chrome 
+  #run
+  #- ./start.sh test_self
+  #- ./start.sh test_scaffold
+
