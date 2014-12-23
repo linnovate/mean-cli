@@ -84,7 +84,7 @@ steps(){
   ensure1
   
   #apt1
-  apt0
+  apt1
   ensure_apt
   
   debug_screen
