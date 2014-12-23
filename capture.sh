@@ -8,11 +8,18 @@ export dir_artifacts=${CIRCLE_ARTIFACTS:-$HOME}
 ensure1(){
 test -d $dir_product || { mkdir -p $dir_product; }
 }
-apt0(){
+
+apt1(){
+commander sudo apt-get -y -q update
+commander npm install -g image-to-ascii
+#libnotify-bin firefox 
+#imagemagick
 #cp: https://github.com/brownman/install_config_test/blob/master/install/apt.sh
 while read line;do
 commander "sudo apt-get install -y -q ${line}"
 done <<START
+graphicsmagick
+firefox
 xcowsay
 xvfb
 x11-utils
@@ -44,20 +51,6 @@ print_many(){
 
 }
 
-apt1(){  
-#firefox
-commander sudo apt-get -y -q update
-#commander sudo apt-get -y upgrade
-
-npm install -g image-to-ascii
-
-commander sudo apt-get install -y -q xvfb x11-utils x11-apps dbus-x11 
-commander sudo apt-get install -y -q graphicsmagick  
-commander sudo apt-get install -y -q xcowsay imagemagick
-#libnotify-bin firefox 
-}
-
-
 capture1(){
   local file="$dir_product/session_$(date +%s).png"
   commander "import -window root $file"
@@ -87,8 +80,7 @@ steps(){
   set_env1
   ensure1
   
-  #apt1
-  apt0
+  apt1
   ensure_apt
   
   debug_screen
