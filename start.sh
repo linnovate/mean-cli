@@ -8,6 +8,8 @@ export file_capture=$dir_root/test/sh/capture.sh
 
 test -f $file_capture
 test -f $file_cfg
+
+chmod +x $file_capture
 source $file_cfg
 }
 
@@ -15,16 +17,16 @@ test_self(){
 sudo apt-get install -y -q curl
 npm install bower
 npm install -g
-npm link
+npm link .
 npm test
 }
 
 user_instructions(){
-npm install -g
-npm link .
-mean status
-grunt test
-grunt &
+commander npm install -g
+commander npm link .
+commander mean status
+commander grunt test
+commander grunt &
 }
 
 test_navigation(){
@@ -45,7 +47,6 @@ test_mean_init
 }
 
 navigation(){
-chmod +x $file_capture
 ( bash -c $file_capture )
 }
 
