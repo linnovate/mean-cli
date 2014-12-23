@@ -30,7 +30,7 @@ require("image-to-ascii")("$file", function (err, result) {
 });
 SETVAR
 )
-commander node "$variable"
+commander node $variable
 }
 
 print_many(){
