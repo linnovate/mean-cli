@@ -32,13 +32,12 @@ START
 
 print_single(){
 local file=$1
-local variable=$(cat <<SETVAR
+node <<SETVAR
 require("image-to-ascii")("$file", function (err, result) {
     console.log(err || result);
 });
 SETVAR
-)
-node $variable
+
 }
 
 print_many(){
