@@ -32,20 +32,19 @@ START
 
 print_single(){
 local file=$1
-node <<SETVAR
+cat  <<SETVAR >/tmp/picture.js
 require("image-to-ascii")("$file", function (err, result) {
     console.log(err || result);
 });
 SETVAR
-
+node /tmp/picture.js
 }
 
 print_many(){
   local list_png=$( ls -1 $dir_product/*.png )
     for item in $list_png;do
     file=$dir_product/$item
-    test -f $file
-    print_single $file
+    test -f $file && { print_single $file; }
     done
 
 
