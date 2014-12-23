@@ -65,7 +65,8 @@ test_mean_init
 }
 capture1(){
 chmod +x ./capture.sh
-bash -E ./capture.sh #trap_err on subshell
+ #trap_err on subshell
+( bash -E ./capture.sh )
 }
 
 steps(){
