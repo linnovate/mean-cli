@@ -66,7 +66,7 @@ done
 
 debug_screen(){
 #commander xwininfo -root -tree
-firefox &
+firefox localhost:3000 &
 xcowsay -t 3  "x11 test" &
 }
 
