@@ -59,7 +59,7 @@ commander whereis xcowsay
 steps(){
   set_env1
   ensure1
-  apt2
+  apt1
   ensure_apt
   
   debug_screen
