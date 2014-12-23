@@ -71,7 +71,7 @@ chmod +x ./capture.sh
 
 steps(){
 set_env
-tests
+#tests
 capture1
 }
 
