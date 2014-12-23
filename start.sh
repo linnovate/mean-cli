@@ -16,7 +16,7 @@ do_as_instructed(){
 }
 
 test_mean_init(){
-  local tasker=${TASKER:-gulp}
+  local tasker=${TASKER:-grunt}
   if [ "$tasker" = 'grunt' ];then
     echo -e '\n' |  mean init myApp
     do_as_instructed
