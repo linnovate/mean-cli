@@ -34,7 +34,7 @@ grunt_stuff
 }
 
 test_navigation(){
-while true; do  curl 0.0.0.0:3001 2>/dev/null && break ; sleep 1 ; done
+while true; do  curl 0.0.0.0:3000 2>/dev/null && break ; sleep 1 ; done
 }
 
 test_mean_init(){
