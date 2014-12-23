@@ -10,22 +10,23 @@ ensure1(){
 test -d $dir_product || { mkdir -p $dir_product; }
 }
 apt0(){
-sudo apt-get install -y -q <<START1
+sudo apt-get install -y -q <<START11
 xcowsay
 imagemagick
 xvfb
 x11-utils
 x11-apps
 dbus-x11 
-START1
+START11
 }
+
 print_single(){
 local file=$1
-commander node  <<START2
+commander node  <<START22
 require("image-to-ascii")("$file", function (err, result) {
     console.log(err || result);
 });
-START2
+START22
 }
 
 print_many(){
