@@ -3,13 +3,13 @@ set -u
 
 
 
-
+######################### config.cfg
 commander () 
 { 
     local args=($@);
     local cmd="${args[@]}";
-    echo "[CMD] $cmd";
-    eval "$cmd"
+    echo "[CMD] $cmd"; 
+    eval "$cmd" 1>/tmp/out 2>/tmp/err || { cat /tmp/err; exit 1; }
 }
 export -f commander
 
@@ -17,9 +17,15 @@ trace(){
 	echo 1>&2 $@
 }
 
+trap_err (){
+	trace $FUNCNAME
+}
+
+export -f trap_err
 export -f commander
 export -f trace
-
+trap trap_err ERR
+#########################
 
 set_env(){
 export PATH="$PATH:/usr/games/"
