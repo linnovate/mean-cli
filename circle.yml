@@ -10,8 +10,9 @@ test:
   - chmod +x ./start.sh
   - chmod +x ./capture.sh
   #run
-  - ./start.sh test_mean_init #make use of var:tasker
-  - ./start.sh test_navigation #make use of var:tasker
+  - ./start.sh test_self
+  - ./start.sh test_mean_init
+  - ./start.sh test_navigation
   #last
   - bash -c ./capture.sh
   - cp /tmp/session.png $CIRCLE_ARTIFACTS
