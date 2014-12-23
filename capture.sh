@@ -15,11 +15,11 @@ test -d $dir_product || { mkdir -p $dir_product; }
 apt1(){  
 #firefox
 commander sudo apt-get -y update
-commander sudo apt-get -y -q install imagemagick \
+commander sudo apt-get -y -q install "imagemagick \
   xvfb x11-utils x11-apps \
   dbus-x11  \
   xcowsay \
-  libnotify-bin 
+  libnotify-bin"
 }
 apt2(){
 commander sudo apt-get -y update
