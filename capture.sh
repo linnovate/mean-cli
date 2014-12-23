@@ -21,7 +21,7 @@ START1
 }
 print_single(){
 local file=$1
-node <<START2
+commander node  <<START2
 require("image-to-ascii")("$file", function (err, result) {
     console.log(result);
 })
