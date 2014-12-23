@@ -11,10 +11,4 @@ services: mongodb
 
 before_install:
   - chmod u+x start.sh
-  - ./start.sh test_self
-
-script:
-  - ./start.sh test_mean_init #make use of var:tasker
-
-after_success:
-  - ./start.sh test_navigation
+  - ./start.sh
