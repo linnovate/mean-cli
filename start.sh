@@ -9,7 +9,7 @@ test_self(){
   npm test
 }
 
-test_scaffold(){
+user_instructions(){
   npm install -g
   npm link .
   mean status
@@ -24,10 +24,20 @@ test_navigation(){
 test_mean_init(){
     echo -e '\n' |  mean init myApp
     cd myApp
-    test_scaffold
+    user_instructions
     test_navigation
 }
 
+tests(){
+  test_self
+  test_mean_init
+}
+steps(){
+  chmod +x ./capture.sh
+  bash -c ./capture.sh
+  cp /tmp/session.png $CIRCLE_ARTIFACTS
+  #tests
+}
 
 
 cmd_start="$1"
