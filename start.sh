@@ -12,7 +12,7 @@ test_self(){
 do_as_instructed(){
   cd myApp
   npm install -g
-  npm link
+  npm link .
 }
 
 test_mean_init(){
@@ -20,7 +20,7 @@ test_mean_init(){
   if [ "$tasker" = 'grunt' ];then
     echo -e '\n' |  mean init myApp
     do_as_instructed
-    grunt test && ( grunt &)
+    grunt test && ( grunt -f )&
   else
     echo -e '\n' |  mean init myApp
     do_as_instructed
