@@ -45,7 +45,7 @@ print_many(){
 local file
 local list_png=$( ls -1 $dir_product/*.png )
 for item in $list_png;do
-file=$dir_product/$item
+file=$item
 test -f $file && { print_single $file; } || { trace ERR file not found: $file; exit 1; }
 done
 }
