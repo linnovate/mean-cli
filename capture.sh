@@ -17,20 +17,14 @@ xcowsay  libnotify-bin imagemagick
 xvfb x11-utils x11-apps dbus-x11  
 START
 }
+
 apt1(){  
 #firefox
 commander sudo apt-get -y update
-commander sudo apt-get -y -q install "imagemagick \
-  xvfb x11-utils x11-apps \
-  dbus-x11  \
-  xcowsay \
-  libnotify-bin"
+npm install -g image-to-ascii
+commander sudo apt-get -y -q install firefox graphicsmagick imagemagick xvfb x11-utils x11-apps   dbus-x11  xcowsay   libnotify-bin graphicsmagick
 }
-apt2(){
-commander sudo apt-get -y update
 
-sudo apt-get install -y -q xcowsay  libnotify-bin imagemagick xvfb x11-utils x11-apps dbus-x11  
-}
 
 capture1(){
   local file="$dir_product/session_$(date +%s).png"
@@ -60,6 +54,7 @@ commander whereis xcowsay
 steps(){
   set_env1
   ensure1
+  apt0
   apt1
   ensure_apt
   
