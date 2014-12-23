@@ -3,12 +3,14 @@ set -u
 #set -e
 
 config1(){
-export file_product_cover=/tmp/session
+export dir_product=/tmp/session
+export dir_artifacts=${CIRCLE_ARTIFACTS:-$HOME/tmp}
 }
 
 apt1(){  
+#firefox
+
 sudo apt-get install -y -q <<START
-firefox
 imagemagick
 xvfb
 x11-utils
@@ -21,8 +23,9 @@ START
 
 capture1(){
   local file
+  
   while true;do
-  file="/tmp/session_$(date +%s).png"
+  file="$dir_product/session_$(date +%s).png"
   eval "import -window root $file"
   sleep 1
   done
@@ -32,7 +35,7 @@ debug_screen(){
 xwininfo -root -tree
 capture1 &
 /usr/games/xcowsay -t 3  "x11 test" &
-firefox &
+#firefox &
 }
 
 
@@ -40,6 +43,7 @@ steps(){
   config1
   apt1
   debug_screen
+  cp $dir_product/* $dir_artifact
 }
 
 steps
