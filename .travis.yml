@@ -7,10 +7,6 @@ cache:
 matrix:
   fast_finish: true
   
-env:
-  - TASKER=grunt
-#  - TASKER=gulp
-  
 services: mongodb
 
 before_install:
