@@ -6,9 +6,7 @@ config1(){
 export file_product_cover=/tmp/session
 }
 
-apt1(){
-sudo apt-cache search firefox
-  
+apt1(){  
 sudo apt-get install -y -q <<START
 firefox
 imagemagick
@@ -24,7 +22,7 @@ START
 capture1(){
   local file
   while true;do
-  file="/tmp/session/$(date +%s).png"
+  file="/tmp/session_$(date +%s).png"
   eval "import -window root $file"
   sleep 1
   done
@@ -33,7 +31,7 @@ capture1(){
 debug_screen(){
 xwininfo -root -tree
 capture1 &
-xcowsay -t 3  "x11 test" &
+/usr/games/xcowsay -t 3  "x11 test" &
 firefox &
 }
 
