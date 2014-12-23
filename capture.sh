@@ -7,9 +7,7 @@ export file_product_cover=/tmp/session.png
 }
 
 apt1(){
-#apt-get install -y -q 
-
-sudo dpkg -L <<START
+sudo apt-get install -y -q <<START
 imagemagick
 xvfb
 x11-utils
