@@ -25,7 +25,7 @@ user_instructions(){
 commander npm install -g
 commander npm link
 commander mean status
-commander grunt test
+grunt test && ( grunt &)
 }
 
 test_navigation(){
@@ -36,7 +36,6 @@ test_mean_init(){
 echo -e '\n' |  mean init myApp
 cd myApp
 user_instructions
-grunt &
 test_navigation
 cd $dir_root
 }
