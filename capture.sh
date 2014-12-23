@@ -26,10 +26,7 @@ libnotify-bin
 START1
 }
 apt2(){
-sudo apt-get install -y -q <<START
-xcowsay  libnotify-bin imagemagick
-xvfb x11-utils x11-apps dbus-x11  
-START
+sudo apt-get install -y -q xcowsay  libnotify-bin imagemagick xvfb x11-utils x11-apps dbus-x11  
 
 }
 capture1(){
