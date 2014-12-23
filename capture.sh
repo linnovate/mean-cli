@@ -3,11 +3,14 @@ set -u
 #set -e
 
 config1(){
-export file_product_cover=/tmp/session.png
+export file_product_cover=/tmp/session
 }
 
 apt1(){
+sudo apt-cache search firefox
+  
 sudo apt-get install -y -q <<START
+firefox
 imagemagick
 xvfb
 x11-utils
@@ -19,14 +22,19 @@ START
 }
 
 capture1(){
-  eval "import -window root $file_product_cover"
+  local file
+  while true;do
+  file="/tmp/session/$(date +%s).png"
+  eval "import -window root $file"
+  sleep 1
+  done
 }
 
 debug_screen(){
 xwininfo -root -tree
+capture1 &
 xcowsay -t 3  "x11 test" &
-sleep 1
-capture1
+firefox &
 }
 
 
