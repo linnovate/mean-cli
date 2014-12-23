@@ -10,14 +10,17 @@ ensure1(){
 test -d $dir_product || { mkdir -p $dir_product; }
 }
 apt0(){
-sudo apt-get install -y -q - <<START11
+#cp: https://github.com/brownman/install_config_test/blob/master/install/apt.sh
+while read line;do
+commander "sudo apt-get install -y -q ${line}"
+done <<START
 xcowsay
 imagemagick
 xvfb
 x11-utils
 x11-apps
 dbus-x11 
-START11
+START
 }
 
 print_single(){
@@ -86,7 +89,7 @@ steps(){
   ensure1
   
   #apt1
-  apt1
+  apt0
   ensure_apt
   
   debug_screen
