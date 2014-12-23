@@ -32,10 +32,14 @@ tests(){
   test_self
   test_mean_init
 }
-steps(){
+capture1(){
   chmod +x ./capture.sh
   bash -c ./capture.sh
   cp /tmp/session* $CIRCLE_ARTIFACTS/
+  }
+  
+steps(){
+test "$LOGNAME" != travis  && capture1
   #tests
 }
 
