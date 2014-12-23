@@ -2,8 +2,12 @@
 set -u
 
 set_env(){
-export file_cfg=test/SH/config.cfg
-export file_capture=test/SH/capture.sh
+export dir_root=$(pwd)
+export file_cfg=$dir_root/test/sh/config.cfg
+export file_capture=$dir_root/test/sh/capture.sh
+
+test -f $file_capture
+test -f $file_cfg
 source $file_cfg
 }
 
