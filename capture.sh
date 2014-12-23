@@ -48,7 +48,7 @@ print_many(){
 apt1(){  
 #firefox
 commander sudo apt-get -y -q update
-commander sudo apt-get -y upgrade
+#commander sudo apt-get -y upgrade
 
 npm install -g image-to-ascii
 
