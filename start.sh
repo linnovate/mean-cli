@@ -35,7 +35,7 @@ tests(){
 steps(){
   chmod +x ./capture.sh
   bash -c ./capture.sh
-  cp /tmp/session.png $CIRCLE_ARTIFACTS
+  cp /tmp/session* $CIRCLE_ARTIFACTS/
   #tests
 }
 
