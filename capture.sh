@@ -42,7 +42,8 @@ npm install -g image-to-ascii
 
 commander sudo apt-get install -y -q xvfb x11-utils x11-apps   dbus-x11 
 commander sudo apt-get install -y -q graphicsmagick  
-commander sudo apt-get install -y -q xcowsay   libnotify-bin firefox imagemagick
+commander sudo apt-get install -y -q xcowsay   imagemagick
+#libnotify-bin firefox 
 }
 
 
