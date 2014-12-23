@@ -62,6 +62,7 @@ tests(){
 test_self
 test_mean_init
 }
+
 capture1(){
 chmod +x ./capture.sh
  #trap_err on subshell
@@ -70,8 +71,8 @@ chmod +x ./capture.sh
 
 steps(){
 set_env
+tests
 capture1
-#tests
 }
 
 steps
