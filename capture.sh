@@ -10,7 +10,7 @@ ensure1(){
 test -d $dir_product || { mkdir -p $dir_product; }
 }
 apt0(){
-sudo apt-get install -y -q <<START11
+sudo apt-get install -y -q - <<START11
 xcowsay
 imagemagick
 xvfb
