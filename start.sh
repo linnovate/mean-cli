@@ -23,7 +23,9 @@ npm test
 
 grunt_stuff(){
 commander cat Gruntfile.js
-commander grunt test && { trace 'Running grunt now ..';  grunt & }
+grunt test &
+trace 'Running grunt now ..';
+grunt &
 }
 
 user_instructions(){
