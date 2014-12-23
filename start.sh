@@ -27,7 +27,7 @@ trap trap_err ERR
 #########################
 
 set_env(){
-export PATH="$PATH:/usr/games/"
+true
 }
 
 
