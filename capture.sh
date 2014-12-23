@@ -15,12 +15,12 @@ while read line;do
 commander "sudo apt-get install -y -q ${line}"
 done <<START
 xcowsay
-imagemagick
 xvfb
 x11-utils
 x11-apps
 dbus-x11 
 START
+#imagemagick
 }
 
 print_single(){
