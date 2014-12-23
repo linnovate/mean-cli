@@ -11,8 +11,12 @@ test -d $dir_product || { mkdir -p $dir_product; }
 }
 apt0(){
 sudo apt-get install -y -q <<START1
-xcowsay  libnotify-bin imagemagick
-xvfb x11-utils x11-apps dbus-x11  
+xcowsay
+imagemagick
+xvfb
+x11-utils
+x11-apps
+dbus-x11 
 START1
 }
 print_single(){
@@ -75,8 +79,9 @@ commander whereis xcowsay
 steps(){
   set_env1
   ensure1
-  #apt0
+  
   apt1
+  apt0
   ensure_apt
   
   debug_screen
