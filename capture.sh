@@ -2,6 +2,7 @@ set -u
 
 
 set_env1(){
+export PATH="$PATH:/usr/games/"
 export dir_product=/tmp/session
 export dir_artifacts=${CIRCLE_ARTIFACTS:-$HOME}
 }
@@ -60,15 +61,15 @@ capture2(){
   
   while true;do
   file="$dir_product/session_$(date +%s).png"
-  eval "import -window root $file"
+  commander "import -window root $file"
   sleep 1
   done
 }
 
 debug_screen(){
 #commander xwininfo -root -tree
-/usr/games/xcowsay -t 3  "x11 test" &
-#firefox &
+firefox &
+xcowsay -t 3  "x11 test" &
 }
 
 ensure_apt(){
@@ -84,7 +85,7 @@ steps(){
   ensure_apt
   
   debug_screen
-  capture1 &
+  capture2 &
   sleep 5
   print_many
   cp $dir_product/*.png $dir_artifacts
