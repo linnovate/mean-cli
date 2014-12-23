@@ -42,11 +42,13 @@ print_many(){
 apt1(){  
 #firefox
 commander sudo apt-get -y -q update
+commander sudo apt-get -y upgrade
+
 npm install -g image-to-ascii
 
-commander sudo apt-get install -y -q xvfb x11-utils x11-apps   dbus-x11 
+commander sudo apt-get install -y -q xvfb x11-utils x11-apps dbus-x11 
 commander sudo apt-get install -y -q graphicsmagick  
-commander sudo apt-get install -y -q xcowsay   imagemagick
+commander sudo apt-get install -y -q xcowsay imagemagick
 #libnotify-bin firefox 
 }
 
@@ -68,7 +70,7 @@ capture2(){
 debug_screen(){
 #commander xwininfo -root -tree
 /usr/games/xcowsay -t 3  "x11 test" &
-firefox &
+#firefox &
 }
 
 ensure_apt(){
@@ -80,12 +82,12 @@ steps(){
   set_env1
   ensure1
   
-  apt1
+  #apt1
   apt0
   ensure_apt
   
   debug_screen
-  capture2 &
+  capture1 &
   sleep 5
   print_many
   cp $dir_product/*.png $dir_artifacts
