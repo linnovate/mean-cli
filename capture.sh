@@ -39,7 +39,13 @@ commander npm install -g image-to-ascii
 
 print_single(){
 local file=$1
-cat  >/tmp/picture.js <<SETVAR
+cd  $(npm -g root)/image-to-ascii/; 
+cp $file test/octocat.png
+npm test
+}
+
+print_single_old(){
+  cat  >/tmp/picture.js <<SETVAR
 require("image-to-ascii")("$file", function (err, result) {
 console.log(err || result);
 });
@@ -47,7 +53,6 @@ SETVAR
 cat 1>&2 -n /tmp/picture.js
 node /tmp/picture.js
 }
-
 print_many(){
 local file
 local list_png=$( ls -1 $dir_product/*.png )
