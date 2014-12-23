@@ -26,9 +26,11 @@ libnotify-bin
 START1
 }
 apt2(){
-sudo apt-get install -y -q xcowsay  libnotify-bin imagemagick xvfb x11-utils x11-apps dbus-x11  
+commander sudo apt-get -y update
 
+sudo apt-get install -y -q xcowsay  libnotify-bin imagemagick xvfb x11-utils x11-apps dbus-x11  
 }
+
 capture1(){
   local file="$dir_product/session_$(date +%s).png"
   commander "import -window root $file"
