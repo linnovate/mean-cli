@@ -5,6 +5,13 @@ set_env(){
 export dir_root=$(pwd)
 export file_cfg=$dir_root/test/sh/config.cfg
 export file_capture=$dir_root/test/sh/capture.sh
+export address=0
+
+if [ "$LOGNAME" = travis ];then
+  address='0.0.0.0:3000'
+else
+  address='0.0.0.0:3001'
+fi
 
 test -f $file_capture
 test -f $file_cfg
@@ -37,7 +44,7 @@ commander grunt_stuff
 }
 
 test_navigation(){
-while true; do  curl 0.0.0.0:3000 2>/dev/null && break ; sleep 1 ; done
+while true; do  curl $address 2>/dev/null && break ; sleep 1 ; done
 }
 
 test_mean_init(){
