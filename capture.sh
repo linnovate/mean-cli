@@ -23,8 +23,8 @@ print_single(){
 local file=$1
 commander node  <<START2
 require("image-to-ascii")("$file", function (err, result) {
-    console.log(result);
-})
+    console.log(err || result);
+});
 START2
 }
 
