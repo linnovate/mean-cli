@@ -6,7 +6,7 @@ set -x
 
 set_env1(){
 export dir_product=/tmp/session
-export dir_artifacts=${CIRCLE_ARTIFACTS:-$HOME/tmp}
+export dir_artifacts=${CIRCLE_ARTIFACTS:-$HOME}
 }
 ensure1(){
 test -d $dir_product || { mkdir -p $dir_product; }
