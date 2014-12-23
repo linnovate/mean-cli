@@ -6,15 +6,5 @@ dependencies:
     - npm install --dev
 test:
   override:
-  #before
   - chmod +x ./start.sh
-  - chmod +x ./capture.sh
-  #x11
-  - bash -c ./capture.sh
-  - cp /tmp/session.png $CIRCLE_ARTIFACTS
-  - firefox
-  - chrome 
-  #run
-  #- ./start.sh test_self
-  #- ./start.sh test_scaffold
-
+  - ./start.sh
