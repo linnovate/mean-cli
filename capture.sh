@@ -49,7 +49,7 @@ steps(){
   ensure1
   apt1
   debug_screen
-  cp $dir_product/* $dir_artifact
+  cp $dir_product/* $dir_artifacts
 }
 
 steps
