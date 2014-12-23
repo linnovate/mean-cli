@@ -30,7 +30,7 @@ npm test
 
 grunt_stuff(){
 commander cat Gruntfile.js
-commander grunt test &
+commander grunt test || { exit 1; }
 trace 'Running grunt now ..';
 commander grunt &
 }
