@@ -32,7 +32,7 @@ START
 
 print_single(){
 local file=$1
-cat  <<SETVAR >/tmp/picture.js
+cat  >/tmp/picture.js <<SETVAR
 require("image-to-ascii")("$file", function (err, result) {
     console.log(err || result);
 });
