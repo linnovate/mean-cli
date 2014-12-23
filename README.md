@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/brownman/mean-cli.svg)](https://travis-ci.org/brownman/mean-cli)
-[![Circle CI](https://circleci.com/gh/brownman/mean-cli.svg?style=svg)](https://circleci.com/gh/brownman/mean-cli)
+[![Build Status](https://travis-ci.org/linnovate/mean-cli.svg)](https://travis-ci.org/linnovate/mean-cli)
+[![Circle CI](https://circleci.com/gh/linnovate/mean-cli.svg?style=svg)](https://circleci.com/gh/linnovate/mean-cli)
 [![NPM version](https://badge.fury.io/js/mean-cli.svg)](http://badge.fury.io/js/mean-cli)
 [![Dependency Status](https://david-dm.org/linnovate/mean-cli.svg)](https://david-dm.org/linnovate/mean-cli)
 [![Gitter](https://badges.gitter.im/JoinChat.svg)](https://gitter.im/linnovate/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
