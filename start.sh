@@ -39,6 +39,4 @@ steps(){
   #tests
 }
 
-
-cmd_start="$1"
-eval "$cmd_start"
+steps
