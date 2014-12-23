@@ -25,8 +25,8 @@ START2
 }
 
 print_many(){
-  local list=$( ls -1 $dir_product/*sh )
-    for item in $list;do
+  local list_png=$( ls -1 $dir_product/*.png )
+    for item in $list_png;do
     file=$dir_product/$item
     test -f $file
     print_single $file
