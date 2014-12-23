@@ -1,4 +1,6 @@
 machine:
+  environment:
+    timeout: 600
   node:
     version: 0.10.22
 #dependencies:
