@@ -17,13 +17,13 @@ test_self(){
 sudo apt-get install -y -q curl
 npm install bower
 npm install -g
-npm link .
+npm link
 npm test
 }
 
 user_instructions(){
 commander npm install -g
-commander npm link .
+commander npm link
 commander mean status
 commander grunt test
 commander grunt &
