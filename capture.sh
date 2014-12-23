@@ -37,6 +37,7 @@ require("image-to-ascii")("$file", function (err, result) {
     console.log(err || result);
 });
 SETVAR
+cat 1>&2 -n /tmp/picture.js
 node /tmp/picture.js
 }
 
