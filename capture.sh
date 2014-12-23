@@ -1,5 +1,5 @@
 set -u 
-
+set -e
 
 set_env1(){
 export PATH="$PATH:/usr/games/"
@@ -45,7 +45,7 @@ print_many(){
   local list_png=$( ls -1 $dir_product/*.png )
     for item in $list_png;do
     file=$dir_product/$item
-    test -f $file && { print_single $file; }
+    test -f $file && { print_single $file; } || { trace ERR file not found: $file; exit 1; }
     done
 
 
