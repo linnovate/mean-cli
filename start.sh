@@ -21,11 +21,16 @@ npm link
 npm test
 }
 
+grunt_stuff(){
+commander cat Gruntfile.js
+commander grunt test && ( commander grunt &)
+}
+
 user_instructions(){
 commander npm install -g
 commander npm link
 commander mean status
-grunt test && ( grunt &)
+grunt_stuff
 }
 
 test_navigation(){
