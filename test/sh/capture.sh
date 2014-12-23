@@ -7,16 +7,7 @@ export dir_product=/tmp/session
 export dir_artifacts=${CIRCLE_ARTIFACTS:-$HOME}
 }
 
-ensure_npm(){
-  ls -l $(npm -g root)/image-to-ascii
-}
-ensure_apt(){
-commander which xcowsay 
-commander whereis xcowsay 
-}
-ensure_dir(){
-test -d $dir_product || { mkdir -p $dir_product; }
-}
+
 
 apt1(){
 commander sudo apt-get -y -q update
@@ -35,6 +26,8 @@ x11-apps
 dbus-x11 
 START
 commander npm install -g image-to-ascii
+ensure_npm
+ensure_apt
 }
 
 print_single(){
@@ -44,15 +37,6 @@ cp $file test/octocat.png
 npm test
 }
 
-print_single_old(){
-  cat  >/tmp/picture.js <<SETVAR
-require("image-to-ascii")("$file", function (err, result) {
-console.log(err || result);
-});
-SETVAR
-cat 1>&2 -n /tmp/picture.js
-node /tmp/picture.js
-}
 print_many(){
 local file
 local list_png=$( ls -1 $dir_product/*.png )
@@ -62,16 +46,13 @@ test -f $file && { print_single $file; } || { trace ERR file not found: $file; e
 done
 }
 
-capture1(){
+capture_single(){
 local file="$dir_product/session_$(date +%s).png"
 commander "import -window root $file"
 }
-capture2(){
-local file
-
+capture_many(){
 while true;do
-file="$dir_product/session_$(date +%s).png"
-commander "import -window root $file"
+capture_single
 sleep 1
 done
 }
@@ -88,11 +69,9 @@ set_env1
 ensure_dir
 
 apt1
-ensure_npm
-ensure_apt
 
 debug_screen
-capture2 &
+capture_many &
 sleep 5
 print_many
 cp $dir_product/*.png $dir_artifacts
