@@ -2,9 +2,14 @@
 set -u 
 #set -e
 
-config1(){
+
+
+set_env1(){
 export dir_product=/tmp/session
 export dir_artifacts=${CIRCLE_ARTIFACTS:-$HOME/tmp}
+}
+ensure1(){
+test -d $dir_product || { mkdir -p $dir_product; }
 }
 
 apt1(){  
@@ -40,7 +45,8 @@ capture1 &
 
 
 steps(){
-  config1
+  set_env1
+  ensure1
   apt1
   debug_screen
   cp $dir_product/* $dir_artifact
