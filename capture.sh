@@ -6,13 +6,20 @@ export PATH="$PATH:/usr/games/"
 export dir_product=/tmp/session
 export dir_artifacts=${CIRCLE_ARTIFACTS:-$HOME}
 }
-ensure1(){
+
+ensure_npm(){
+  ls -l $(npm -g root)/image-to-ascii
+}
+ensure_apt(){
+commander which xcowsay 
+commander whereis xcowsay 
+}
+ensure_dir(){
 test -d $dir_product || { mkdir -p $dir_product; }
 }
 
 apt1(){
 commander sudo apt-get -y -q update
-commander npm install -g image-to-ascii
 #libnotify-bin firefox 
 #imagemagick
 #cp: https://github.com/brownman/install_config_test/blob/master/install/apt.sh
@@ -27,7 +34,7 @@ x11-utils
 x11-apps
 dbus-x11 
 START
-#imagemagick
+commander npm install -g image-to-ascii
 }
 
 print_single(){
@@ -70,16 +77,13 @@ firefox localhost:3000 &
 xcowsay -t 3  "x11 test" &
 }
 
-ensure_apt(){
-commander which xcowsay 
-commander whereis xcowsay 
-}
 
 steps(){
 set_env1
-ensure1
+ensure_dir
 
 apt1
+ensure_npm
 ensure_apt
 
 debug_screen
