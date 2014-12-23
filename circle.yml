@@ -1,6 +1,4 @@
 machine:
-  environment:
-    timeout: 1200
   node:
     version: 0.10.22
 #dependencies:
@@ -9,5 +7,5 @@ machine:
 test:
   override:
   - chmod +x ./start.sh
-  - ./start.sh:
-    timeout: 600
+  - './start.sh':
+      timeout: 600
