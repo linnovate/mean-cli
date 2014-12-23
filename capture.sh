@@ -14,8 +14,8 @@ test -d $dir_product || { mkdir -p $dir_product; }
 
 apt1(){  
 #firefox
-sudo apt-get update -qq -y
-sudo apt-get install -y <<START
+commander sudo apt-get update -qq -y
+commander sudo apt-get install -y <<START1
 imagemagick
 xvfb
 x11-utils
@@ -23,7 +23,7 @@ x11-apps
 dbus-x11  
 xcowsay
 libnotify-bin
-START
+START1
 }
 
 capture1(){
@@ -47,7 +47,7 @@ capture1 &
 steps(){
   set_env1
   ensure1
-  apt1
+  commander apt1
   debug_screen
   cp $dir_product/* $dir_artifacts
 }
