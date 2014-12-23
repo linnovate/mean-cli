@@ -9,11 +9,7 @@ matrix:
   
 services: mongodb
 
-script:
-  - chmod u+x start.sh
-  - ./start.sh
-  
-after_script1:
+before_install:
   - git submodule update --init --recursive
   # http://about.travis-ci.org/docs/user/gui-and-headless-browsers/
   - export DISPLAY=:99.0
@@ -25,6 +21,11 @@ after_script1:
   - uname -m
   - lsb_release -a
   
-script1:
+script:
+#set x11
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
-  - ./capture.sh
+#run!
+  - chmod u+x start.sh
+  - ./start.sh
+  
+
