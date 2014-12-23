@@ -6,8 +6,12 @@ dependencies:
     - npm install --dev
 test:
   override:
+  #before
   - chmod +x ./start.sh
   - chmod +x ./capture.sh
+  #run
+  - ./start.sh test_mean_init #make use of var:tasker
+  - ./start.sh test_navigation #make use of var:tasker
+  #last
   - bash -c ./capture.sh
-  - bash -c ./start.sh
   - cp /tmp/session.png $CIRCLE_ARTIFACTS
