@@ -59,7 +59,7 @@ done
 
 debug_screen(){
 #commander xwininfo -root -tree
-firefox 0.0.0.0:3000 &
+firefox $address &
 xcowsay -t 3  "x11 test" &
 }
 
