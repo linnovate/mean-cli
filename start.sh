@@ -70,7 +70,7 @@ bash -E ./capture.sh #trap_err on subshell
 
 steps(){
 set_env
-( set -e; capture1 )
+capture1
 #tests
 }
 
