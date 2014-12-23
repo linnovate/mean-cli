@@ -22,11 +22,13 @@ START11
 
 print_single(){
 local file=$1
-commander node  <<START22
+local variable=$(cat <<SETVAR
 require("image-to-ascii")("$file", function (err, result) {
     console.log(err || result);
 });
-START22
+SETVAR
+)
+commander node "$variable"
 }
 
 print_many(){
