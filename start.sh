@@ -9,28 +9,26 @@ test_self(){
   npm test
 }
 
-do_as_instructed(){
-  cd myApp
+test_scaffold(){
   npm install -g
   npm link .
-}
-
-test_mean_init(){
-  local tasker=${TASKER:-grunt}
-  if [ "$tasker" = 'grunt' ];then
-    echo -e '\n' |  mean init myApp
-    do_as_instructed
-    grunt test && ( grunt -f )&
-  else
-    echo -e '\n' |  mean init myApp
-    do_as_instructed
-    gulp test && ( gulp &)
-  fi
+  mean status
+  grunt test
+  grunt &
 }
 
 test_navigation(){
   while true; do  curl 0.0.0.0:3000 2>/dev/null && break ; sleep 1 ; done
 }
+
+test_mean_init(){
+    echo -e '\n' |  mean init myApp
+    cd myApp
+    test_scaffold
+    test_navigation
+}
+
+
 
 cmd_start="$1"
 eval "$cmd_start"
