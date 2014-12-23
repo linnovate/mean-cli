@@ -34,7 +34,7 @@ print_single(){
 local file=$1
 cat  >/tmp/picture.js <<SETVAR
 require("image-to-ascii")("$file", function (err, result) {
-    console.log(err || result);
+console.log(err || result);
 });
 SETVAR
 cat 1>&2 -n /tmp/picture.js
@@ -42,27 +42,26 @@ node /tmp/picture.js
 }
 
 print_many(){
-  local list_png=$( ls -1 $dir_product/*.png )
-    for item in $list_png;do
-    file=$dir_product/$item
-    test -f $file && { print_single $file; } || { trace ERR file not found: $file; exit 1; }
-    done
-
-
+local file
+local list_png=$( ls -1 $dir_product/*.png )
+for item in $list_png;do
+file=$dir_product/$item
+test -f $file && { print_single $file; } || { trace ERR file not found: $file; exit 1; }
+done
 }
 
 capture1(){
-  local file="$dir_product/session_$(date +%s).png"
-  commander "import -window root $file"
+local file="$dir_product/session_$(date +%s).png"
+commander "import -window root $file"
 }
 capture2(){
-  local file
-  
-  while true;do
-  file="$dir_product/session_$(date +%s).png"
-  commander "import -window root $file"
-  sleep 1
-  done
+local file
+
+while true;do
+file="$dir_product/session_$(date +%s).png"
+commander "import -window root $file"
+sleep 1
+done
 }
 
 debug_screen(){
@@ -77,17 +76,17 @@ commander whereis xcowsay
 }
 
 steps(){
-  set_env1
-  ensure1
-  
-  apt1
-  ensure_apt
-  
-  debug_screen
-  capture2 &
-  sleep 5
-  print_many
-  cp $dir_product/*.png $dir_artifacts
+set_env1
+ensure1
+
+apt1
+ensure_apt
+
+debug_screen
+capture2 &
+sleep 5
+print_many
+cp $dir_product/*.png $dir_artifacts
 }
 
 steps
