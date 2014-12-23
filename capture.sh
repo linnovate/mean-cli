@@ -25,8 +25,18 @@ xcowsay
 libnotify-bin
 START1
 }
+apt2(){
+sudo apt-get install -y -q <<START
+xcowsay  libnotify-bin imagemagick
+xvfb x11-utils x11-apps dbus-x11  
+START
 
+}
 capture1(){
+  local file="$dir_product/session_$(date +%s).png"
+  commander "import -window root $file"
+}
+capture2(){
   local file
   
   while true;do
@@ -37,19 +47,26 @@ capture1(){
 }
 
 debug_screen(){
-xwininfo -root -tree
-capture1 &
+#commander xwininfo -root -tree
 /usr/games/xcowsay -t 3  "x11 test" &
-#firefox &
+firefox &
 }
 
+ensure_apt(){
+commander which xcowsay 
+commander whereis xcowsay 
+}
 
 steps(){
   set_env1
   ensure1
-  commander apt1
+  apt2
+  ensure_apt
+  
   debug_screen
-  cp $dir_product/* $dir_artifacts
+  capture2 &
+  sleep 5
+  cp $dir_product/*.png $dir_artifacts
 }
 
 steps
