@@ -30,8 +30,9 @@ program
   .command('addKey', 'Add SSH key to network.mean.io')
   .command('publish', 'Publishes a package on the mean network')
   .command('search', 'Searches for a package on the mean network')
+  .option('--env [env]', 'Mean environment defaults to `development`')
 
-.parse(process.argv);
+  .parse(process.argv);
 
 // print help with no args
 if (program.args.length < 1) {
