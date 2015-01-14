@@ -7,7 +7,7 @@ var cli = require('../lib/cli'),
 
 program
 	.description('Publishes package on the mean network.')
-	.option('-r, --remote', 'Provide custom git remote')
+	.option('--remote <remote>', 'Provide custom git remote')
 	.parse(process.argv);
 
 var options = {
