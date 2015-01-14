@@ -7,6 +7,11 @@ var cli = require('../lib/cli'),
 
 program
   .description('Publishes package on the mean network.')
+  .option('-r, --remote', 'Specify your own repo to manage package')
   .parse(process.argv);
 
-cli.publish();
+var options = {
+  remote: program.remote
+};
+
+cli.publish(options);
