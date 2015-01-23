@@ -1,7 +1,7 @@
 {
   "name": "mean-cli",
   "description": "Simple command line interface for installing and managing MEAN apps",
-  "version": "0.9.15",
+  "version": "0.9.16",
   "author": {
     "name": "mean cli team"
   },
