@@ -1,17 +1,9 @@
 {
   "name": "mean-cli",
-  "version": "0.9.15",
-  "preferGlobal": true,
   "description": "Simple command line interface for installing and managing MEAN apps",
+  "version": "0.9.15",
   "author": {
     "name": "mean cli team"
-  },
-  "contributors": "https://github.com/linnovate/mean-cli/graphs/contributors",
-  "license": "MIT",
-  "main": "index",
-  "scripts": {
-    "test": "node node_modules/.bin/mocha test/**/*.js -R spec",
-    "preinstall": "node ./scripts/preinstall"
   },
   "bin": {
     "mean": "./bin/mean",
@@ -35,20 +27,7 @@
     "mean-status": "./bin/mean-status",
     "mean-user": "./bin/mean-user"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/linnovate/mean-cli.git"
-  },
-  "keywords": [
-    "mean",
-    "meanio",
-    "mean.io",
-    "mean-cli"
-  ],
-  "engines": {
-    "node": "0.10.x",
-    "npm": "2.1.x"
-  },
+  "contributors": "https://github.com/linnovate/mean-cli/graphs/contributors",
   "dependencies": {
     "bower": "^1.3.8",
     "chalk": "^0.5.1",
@@ -69,5 +48,26 @@
     "mocha": "^1.18.2",
     "precommit-hook": "^1.0.7",
     "should": "^3.2.0"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "2.1.x"
+  },
+  "keywords": [
+    "mean",
+    "meanio",
+    "mean.io",
+    "mean-cli"
+  ],
+  "license": "MIT",
+  "main": "index",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linnovate/mean-cli.git"
+  },
+  "scripts": {
+    "preinstall": "node ./scripts/preinstall",
+    "test": "node node_modules/.bin/mocha test/**/*.js -R spec"
   }
 }
