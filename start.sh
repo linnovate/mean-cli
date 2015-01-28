@@ -48,7 +48,7 @@ while true; do  curl $address 2>/dev/null && break ; sleep 1 ; done
 }
 
 test_mean_init(){
-echo -e '\n' |  mean init myApp
+echo -e '\n\n' |  mean init myApp
 cd myApp
 user_instructions
 test_navigation
