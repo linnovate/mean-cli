@@ -40,4 +40,4 @@ See http://mean.io/#!/docs for more in-depth information about mean.
 
   Run your app:
 
-    $ grunt
+    $ gulp
