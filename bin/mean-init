@@ -11,6 +11,7 @@ program
   .option('-b, --branch <branch>', 'git branch')
   .option('-g, --git', 'clone using git:// instead of https://')
   .option('--repo <repo>', 'Specify repository to install')
+  .option('-f, --full', 'Clone the project fully including all commit history')
   .option('-q, --quick', 'Automatically go into the directory, run npm install and grunt')
   .parse(process.argv);
 
@@ -18,6 +19,7 @@ var options = {
   name: program.args.length ? program.args[0] : 'mean',
   branch: program.branch || 'master',
   git: program.git,
+  full: program.full,
   repo: program.repo,
   quick: program.quick
 };
