@@ -1,9 +1,9 @@
 {
   "name": "mean-cli",
   "description": "Simple command line interface for installing and managing MEAN apps",
-  "version": "0.9.24",
+  "version": "0.9.25",
   "author": {
-    "name": "mean cli team"
+    "name": "https://github.com/linnovate/mean-cli/graphs/contributors"
   },
   "bin": {
     "mean": "./bin/mean",
@@ -42,7 +42,8 @@
     "progress": "^1.1.8",
     "prompt": "^0.2.13",
     "request": "latest",
-    "shelljs": "^0.3.0"
+    "shelljs": "^0.3.0",
+    "async-series":"latest"
   },
   "devDependencies": {
     "jshint": "^2.5.10",
