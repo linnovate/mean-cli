@@ -12,6 +12,8 @@ program
   .option('-g, --git', 'clone using git:// instead of https://')
   .option('--repo <repo>', 'Specify repository to install')
   .option('-f, --full', 'Clone the project fully including all commit history')
+  .option('-p, --privacy', 'Do not submit anonymous data to improve the mean cli')
+  .option('-m, --mail', 'Assign/Create admin user to specified email')
   .option('-q, --quick', 'Automatically go into the directory, run npm install and grunt')
   .parse(process.argv);
 
@@ -21,6 +23,8 @@ var options = {
   git: program.git,
   full: program.full,
   repo: program.repo,
+  privacy: program.privacy || 'Y',
+  user: program.user,
   quick: program.quick
 };
 
