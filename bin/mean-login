@@ -2,11 +2,11 @@
 
 'use strict';
 
-var cli = require('../lib/cli'),
-  program = require('commander');
+var users = require('../lib/controllers/users'),
+    program = require('commander');
 
 program
   .description('Login to the network')
   .parse(process.argv);
 
-cli.login(program.args[0]);
+users.login(program.args[0]);
