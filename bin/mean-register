@@ -9,4 +9,4 @@ program
   .description('Registers a user on the mean.io network.')
   .parse(process.argv);
 
-users.register();
+users.register({cmd: 'register'});

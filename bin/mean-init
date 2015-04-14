@@ -25,7 +25,7 @@ var options = {
   full: program.full,
   repo: program.repo,
   privacy: program.privacy || 'Y',
-  mail: program.mail,
+  email: program.mail,
   username: program.username,
   quick: program.quick
 };
