@@ -43,7 +43,8 @@ if (program.args.length < 1) {
 }
 //var requireRoot = ['deploy', 'init', 'install', 'list', 'logs', 'package', 'postinstall', 'preinstall', 'publish', 'status', 'uninstall'];
 //if (requireRoot.indexOf(program.rawArgs[2]) === -1)
-anonymizedData.create({cmd: program.rawArgs[2]});
+if (program.rawArgs[2] !== 'init')
+	anonymizedData.create({cmd: program.rawArgs[2]});
 
 // if there is a command, make sure it's valid
 var commands = program.commands.map(function(command) {
