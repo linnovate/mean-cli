@@ -2,9 +2,9 @@
 
 'use strict';
 
-var cli = require('../lib/cli'),
-  wizard = require('../lib/wizard'),
-  program = require('commander');
+	var wizard = require('../lib/wizard'),
+        anonymizedData = require('../lib/controllers/anonymized-data'),
+        program = require('commander');
 
 program
   .description('Create a MEAN application in the current working directory')
@@ -30,4 +30,10 @@ var options = {
   quick: program.quick
 };
 
-wizard(options, cli.init);
+wizard(options, function(data) {
+	data.cmd = 'init';
+	data.data = {
+		name: options.name
+	};
+	anonymizedData.create(data);
+});
