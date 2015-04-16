@@ -9,4 +9,4 @@ program
   .description('Login to the network')
   .parse(process.argv);
 
-users.login({cmd: 'login'});
+users.login();
