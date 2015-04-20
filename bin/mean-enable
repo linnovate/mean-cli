@@ -9,4 +9,6 @@ program
   .description('Disable user reporting')
   .parse(process.argv);
 
-cli.toggleReporting(false);
+var args = program.args.length ? program.args[0] : 'user-reporting';
+
+cli.toggleReporting(true, args);

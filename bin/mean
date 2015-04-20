@@ -31,8 +31,8 @@ program
   .command('addKey', 'Add SSH key to network.mean.io')
   .command('publish', 'Publishes a package on the mean network')
   .command('search', 'Searches for a package on the mean network')
-  .command('disableReporting', 'disable user reporting')
-  .command('enableReporting', 'enable user reporting')
+  .command('disable <name>', 'disable user reporting')
+  .command('enable <name>', 'enable user reporting')
   .option('--env [env]', 'Mean environment defaults to `development`')
 
   .parse(process.argv);
