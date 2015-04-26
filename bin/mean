@@ -4,7 +4,8 @@
 
 // MEAN CLI.
 var program = require('commander'),
-  _ = require('lodash');
+	anonymizedData = require('../lib/controllers/anonymized-data'),
+	_ = require('lodash');
 
 // set program version
 var version = require('../package').version;
@@ -30,6 +31,8 @@ program
   .command('addKey', 'Add SSH key to network.mean.io')
   .command('publish', 'Publishes a package on the mean network')
   .command('search', 'Searches for a package on the mean network')
+  .command('disable <name>', 'disable user reporting')
+  .command('enable <name>', 'enable user reporting')
   .option('--env [env]', 'Mean environment defaults to `development`')
 
   .parse(process.argv);
@@ -38,11 +41,16 @@ program
 if (program.args.length < 1) {
   program.help();
 }
+//var requireRoot = ['deploy', 'init', 'install', 'list', 'logs', 'package', 'postinstall', 'preinstall', 'publish', 'status', 'uninstall'];
+//if (requireRoot.indexOf(program.rawArgs[2]) === -1)
+if (program.rawArgs[2] !== 'init' && program.rawArgs[2] !== 'install')
+	anonymizedData.create({cmd: program.rawArgs[2]});
 
 // if there is a command, make sure it's valid
 var commands = program.commands.map(function(command) {
   return command._name;
 });
+
 if (!_.contains(commands, program.args[0])) {
   console.log('mean: `' + program.rawArgs[2] + '` is not a mean command. See `mean --help`.');
   console.log();

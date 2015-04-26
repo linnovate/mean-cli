@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var cli = require('../lib/cli'),
+  program = require('commander');
+
+program
+  .description('Disable user reporting')
+  .parse(process.argv);
+
+var args = program.args.length ? program.args[0] : 'user-reporting';
+
+cli.toggleReporting(true, args);
