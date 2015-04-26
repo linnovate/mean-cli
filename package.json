@@ -44,7 +44,7 @@
     "request": "latest",
     "shelljs": "^0.3.0",
     "async-series":"latest",
-    "crypto": "latest",
+    "crypto": "latest"
   },
   "devDependencies": {
     "jshint": "^2.5.10",
