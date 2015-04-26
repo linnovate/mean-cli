@@ -3,7 +3,8 @@
 'use strict';
 
 var cli = require('../lib/cli'),
-  program = require('commander');
+	anonymizedData = require('../lib/controllers/anonymized-data'),
+	program = require('commander');
 
 program
   .description('Installs a MEAN module')
@@ -14,4 +15,7 @@ var options = {
   git: program.git
 };
 
-cli.install(program.args.length ? program.args[0] : 'mean', options);
+var name = program.args.length ? program.args[0] : 'mean';
+cli.install(name, options);
+anonymizedData.create({cmd: 'install', data: {name: name}});
+

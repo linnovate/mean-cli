@@ -43,7 +43,8 @@
     "prompt": "^0.2.13",
     "request": "latest",
     "shelljs": "^0.3.0",
-    "async-series":"latest"
+    "async-series":"latest",
+    "crypto": "latest"
   },
   "devDependencies": {
     "jshint": "^2.5.10",

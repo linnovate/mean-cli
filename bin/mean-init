@@ -2,9 +2,9 @@
 
 'use strict';
 
-var cli = require('../lib/cli'),
-  wizard = require('../lib/wizard'),
-  program = require('commander');
+var wizard = require('../lib/wizard'),
+    anonymizedData = require('../lib/controllers/anonymized-data'),
+    program = require('commander');
 
 program
   .description('Create a MEAN application in the current working directory')
@@ -12,6 +12,9 @@ program
   .option('-g, --git', 'clone using git:// instead of https://')
   .option('--repo <repo>', 'Specify repository to install')
   .option('-f, --full', 'Clone the project fully including all commit history')
+  .option('-p, --privacy', 'Do not submit anonymous data to improve the mean cli')
+  .option('-m, --mail <mail>', 'Assign/Create admin user to specified email')
+  .option('-u, --username <username>', 'Assign/Create admin user to specified email')
   .option('-q, --quick', 'Automatically go into the directory, run npm install and grunt')
   .parse(process.argv);
 
@@ -21,7 +24,12 @@ var options = {
   git: program.git,
   full: program.full,
   repo: program.repo,
+  privacy: program.privacy || 'Y',
+  email: program.mail,
+  username: program.username,
   quick: program.quick
 };
 
-wizard(options, cli.init);
+wizard(options);
+anonymizedData.create({cmd: 'init', data: {name: options.name}});
+
