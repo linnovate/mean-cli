@@ -4,7 +4,12 @@
 
 var wizard = require('../lib/wizard'),
     anonymizedData = require('../lib/controllers/anonymized-data'),
-    program = require('commander');
+	utils = require('../lib//utils'),
+	program = require('commander');
+
+
+var anonymizeVal = utils.readMeanSync('anonymizedData');
+var defaultPrivacyOption = (anonymizeVal === null) ? 'Y' : (!anonymizeVal ? 'n' : 'Y');
 
 program
   .description('Create a MEAN application in the current working directory')
@@ -24,7 +29,7 @@ var options = {
   git: program.git,
   full: program.full,
   repo: program.repo,
-  privacy: program.privacy || 'Y',
+  privacy: program.privacy || defaultPrivacyOption,
   email: program.mail,
   username: program.username,
   quick: program.quick
