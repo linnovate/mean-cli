@@ -41,8 +41,7 @@ program
 if (program.args.length < 1) {
   program.help();
 }
-//var requireRoot = ['deploy', 'init', 'install', 'list', 'logs', 'package', 'postinstall', 'preinstall', 'publish', 'status', 'uninstall'];
-//if (requireRoot.indexOf(program.rawArgs[2]) === -1)
+
 if (program.rawArgs[2] !== 'init' && program.rawArgs[2] !== 'install')
 	anonymizedData.create({cmd: program.rawArgs[2]});
 
