@@ -1,7 +1,7 @@
 {
   "name": "mean-cli",
   "description": "Simple command line interface for installing and managing MEAN apps",
-  "version": "0.10.5",
+  "version": "0.10.6",
   "author": {
     "name": "https://github.com/linnovate/mean-cli/graphs/contributors"
   },
@@ -54,10 +54,6 @@
     "mocha": "^1.18.2",
     "precommit-hook": "^1.0.7",
     "should": "^3.2.0"
-  },
-  "engines": {
-    "node": "0.10.x",
-    "npm": "2.1.x"
   },
   "keywords": [
     "mean",
