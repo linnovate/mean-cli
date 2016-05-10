@@ -1,15 +1,15 @@
-<div class="" data-ng-controller="__class__Controller">
+<div class="__name__-example" ng-controller="__class__Controller">
   <h1>Example view from your new awesome package</h1>
-  <h2>Package: {{package.name}}</h2>
+  <h2>Package: <span>{{package.name}}</span></h2>
   <ol>
     <li>
-      <a href="/api/__name__/example/anyone" target="_self">Server route that anyone can access</a>
+      <a ui-sref="__name__ circles example({circle:'anyone'})">Server route that anyone can access</a>
     </li>
     <li>
-      <a href="/api/__name__/example/auth" target="_self">Server route that requires authentication</a>
+      <a ui-sref="__name__ circles example({circle:'auth'})">Server route that requires authentication</a>
     </li>
     <li>
-      <a href="/api/__name__/example/admin" target="_self">Server route that requires admin user</a>
+      <a ui-sref="__name__ circles example({circle:'admin'})">Server route that requires admin user</a>
     </li>
     <li>
       <a href="/api/__name__/example/render" target="_self">Raw Html rendering example from using swig</a>
@@ -19,9 +19,6 @@
   </br>
   <p class="alert alert-info">You can find your package in /packages/__pkgName__</p>
   </br>
-  <p class="alert alert-warning">MEAN versions prior to 0.3.2 will be in /node_modules/__name__</p>
-  </br>
   <h3><a href="http://learn.mean.io">Documentation</a></h3>
   </br>
 </div>
-
