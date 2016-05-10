@@ -48,7 +48,7 @@ var commands = program.commands.map(function(command) {
   return command._name;
 });
 
-if (!_.contains(commands, program.args[0])) {
+if (!_.includes(commands, program.args[0])) {
   console.log('mean: `' + program.rawArgs[2] + '` is not a mean command. See `mean --help`.');
   console.log();
   process.exit(1);
