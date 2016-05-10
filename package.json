@@ -1,7 +1,7 @@
 {
   "name": "mean-cli",
   "description": "Simple command line interface for installing and managing MEAN apps",
-  "version": "0.12.7",
+  "version": "0.12.8",
   "author": {
     "name": "https://github.com/linnovate/mean-cli/graphs/contributors"
   },
