@@ -22,6 +22,8 @@ See http://mean.io/#!/docs for more in-depth information about mean.
 
     $ [sudo] npm install -g mean-cli
 
+**Note:** You may need to use sudo only for OSX, *nix, BSD etc and run your command shell as Administrator (for Windows)
+
   Explore CLI functionality:
 
     $ mean --help
