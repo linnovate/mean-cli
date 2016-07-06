@@ -3,6 +3,7 @@
 [![NPM version](https://badge.fury.io/js/mean-cli.svg)](http://badge.fury.io/js/mean-cli)
 [![Dependency Status](https://david-dm.org/linnovate/mean-cli.svg)](https://david-dm.org/linnovate/mean-cli)
 [![Gitter](https://badges.gitter.im/JoinChat.svg)](https://gitter.im/linnovate/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Known Vulnerabilities](https://snyk.io/test/github/linnovate/mean-cli/badge.svg)](https://snyk.io/test/github/linnovate/mean-cli)
 
 # [![MEAN Logo](http://mean.io/system/assets/img/logos/meanlogo.png)](http://mean.io/) MEAN Command Line
 
