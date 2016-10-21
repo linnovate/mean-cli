@@ -3,9 +3,9 @@
 'use strict';
 
 var wizard = require('../lib/wizard'),
-    anonymizedData = require('../lib/controllers/anonymized-data'),
-	utils = require('../lib//utils'),
-	program = require('commander');
+  anonymizedData = require('../lib/controllers/anonymized-data'),
+  utils = require('../lib//utils'),
+  program = require('commander');
 
 
 var anonymizeVal = utils.readMeanSync('anonymizedData');
@@ -36,5 +36,9 @@ var options = {
 };
 
 wizard(options);
-anonymizedData.create({cmd: 'init', data: {name: options.name}});
-
+anonymizedData.create({
+  cmd: 'init',
+  data: {
+    name: options.name
+  }
+});

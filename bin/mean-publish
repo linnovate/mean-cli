@@ -3,15 +3,15 @@
 'use strict';
 
 var cli = require('../lib/cli'),
-	program = require('commander');
+  program = require('commander');
 
 program
-	.description('Publishes package on the mean network.')
-	.option('--remote <remote>', 'Provide custom git remote')
-	.parse(process.argv);
+  .description('Publishes package on the mean network.')
+  .option('--remote <remote>', 'Provide custom git remote')
+  .parse(process.argv);
 
 var options = {
-	remote: program.remote
+  remote: program.remote
 };
 
 cli.publish(options);

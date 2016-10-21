@@ -4,8 +4,8 @@
 
 // MEAN CLI.
 var program = require('commander'),
-	anonymizedData = require('../lib/controllers/anonymized-data'),
-	_ = require('lodash');
+  anonymizedData = require('../lib/controllers/anonymized-data'),
+  _ = require('lodash');
 
 // set program version
 var version = require('../package').version;
@@ -33,7 +33,7 @@ program
   .command('enable <name>', 'enable user reporting')
   .option('--env [env]', 'Mean environment defaults to `development`')
 
-  .parse(process.argv);
+.parse(process.argv);
 
 // print help with no args
 if (program.args.length < 1) {
@@ -41,7 +41,9 @@ if (program.args.length < 1) {
 }
 
 if (program.rawArgs[2] !== 'init' && program.rawArgs[2] !== 'install')
-	anonymizedData.create({cmd: program.rawArgs[2]});
+  anonymizedData.create({
+    cmd: program.rawArgs[2]
+  });
 
 // if there is a command, make sure it's valid
 var commands = program.commands.map(function(command) {

@@ -3,7 +3,7 @@
 'use strict';
 
 var users = require('../lib/controllers/users'),
-    program = require('commander');
+  program = require('commander');
 
 program
   .description('Login to the network')
