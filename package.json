@@ -42,7 +42,7 @@
     "progress": "^1.1.8",
     "prompt": "^1.0.0",
     "request": "^2.72.0",
-    "shelljs": "^0.7.0"
+    "shelljs": "^0.9.0"
   },
   "devDependencies": {
     "jshint": "^2.5.10",
